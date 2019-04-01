@@ -3,7 +3,11 @@ CFLAGS=-c -Wall
 LDFLAGS=
 SOURCES=main.cpp perceptron.o
 OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=rgz.exe
+ifeq ($(OS),Windows_NT)
+	EXECUTABLE=rgz.exe
+else
+	EXECUTABLE=rgz
+endif
 
 all: $(SOURCES) $(EXECUTABLE)
 	
