@@ -1,7 +1,7 @@
 #include <random>
 #include <iostream>
 #include <math.h>
-
+//Класс персептрона
 class Perceptron {
     public:
         double coeff;
