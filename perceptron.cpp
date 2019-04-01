@@ -16,3 +16,7 @@ Perceptron::Perceptron(double coeff = 0.5) {
 double Perceptron::activationFunc(double u) {
     return 1/(1+exp(-coeff*u));
 }
+
+double Perceptron::dE(double u) {
+    return (coeff*activationFunc(u))*(1-activationFunc(u));
+}

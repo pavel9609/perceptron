@@ -10,4 +10,5 @@ class Perceptron {
         int learningCount;
         Perceptron(double coeff);
         double activationFunc(double u);
+        double dE(double u);
 };
