@@ -32,6 +32,7 @@ bool Perceptron::onlineLearning(std::vector<Point> points) {
                     weights[j] = weights[j]-inputs[1]*(inputs[2]-points[i].d);
                     std::cout << weights[j] << " ";
                 }
+                std::cout << std::endl;
                 learningCount++;
         }
     return true;

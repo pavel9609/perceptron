@@ -11,10 +11,12 @@ using std::vector;
 
 int main(int argc, char* argv[]) {
     vector<Point> points;
+    Perceptron* per = new Perceptron(0.5);
+    
+    //Генерим случайные данные
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_real_distribution<> dis(-10,0);
-    Perceptron* per = new Perceptron(0.5);
     std::ofstream ofs;
     ofs.open("./first.dat", std::ofstream::trunc);
     for (int i = 0; i < 50; i++) {
@@ -42,8 +44,8 @@ int main(int argc, char* argv[]) {
     plot("x=0; y=0");
     plot("set palette rgb 33,13,10;");
     plot("set pointsize 20;");
-    plot("set xzeroaxis line 10 linetype 3 linecolor rgb \"black\";");
-    plot("set yzeroaxis line 10 linetype 3 linecolor rgb \"black\";");
+    plot("set xzeroaxis linetype 3 linecolor rgb \"black\";");
+    plot("set yzeroaxis linetype 3 linecolor rgb \"black\";");
     plot("plot \"./first.dat\"  using 1:2:3 pt 7 ps 1 palette");
     delete per;
     points.clear();
