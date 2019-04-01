@@ -20,3 +20,19 @@ double Perceptron::activationFunc(double u) {
 double Perceptron::dE(double u) {
     return (coeff*activationFunc(u))*(1-activationFunc(u));
 }
+
+bool Perceptron::onlineLearning(std::vector<Point> points) {
+        inputs[1] = 10000;
+        inputs[2] = 100;
+        for(int i = 0; i < points.size(); i++) {
+            std::cout << inputs[1] << '\t' << inputs[2] << std::endl;
+                inputs[1] = points[i].x;
+                inputs[2] = points[i].y;
+                for(int j = 0; j < 3; j++) {
+                    weights[j] = weights[j]-inputs[1]*(inputs[2]-points[i].d);
+                    std::cout << weights[j] << " ";
+                }
+                learningCount++;
+        }
+    return true;
+}

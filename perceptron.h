@@ -1,14 +1,26 @@
+#ifndef PERCEPTRON_H
+#define PERCEPTRON_H
+
 #include <random>
 #include <iostream>
+#include <vector>
 #include <math.h>
+
+#include "point.h"
+
 //Класс персептрона
 class Perceptron {
+    private:
+        double coeff;                       //Коэффициент функции
+        double eps = 0.1;
     public:
-        double coeff;
-        double inputs[2];
-        double weights[2];
-        int learningCount;
+        double inputs[2];                   //Входные значения
+        double weights[2];                  //Веса
+        int learningCount;                  //Количество шагов обучения
         Perceptron(double coeff);
-        double activationFunc(double u);
-        double dE(double u);
+        double activationFunc(double u);    //Функция активации
+        bool onlineLearning(std::vector<Point> points);
+        double dE(double u);                //дельта e
 };
+
+#endif
