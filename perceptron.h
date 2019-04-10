@@ -17,9 +17,10 @@ class Perceptron {
         double inputs[2];                   //Входные значения
         double weights[2];                  //Веса
         int learningCount;                  //Количество шагов обучения
-        Perceptron(double coeff);
+        Perceptron(double _coeff);
         double activationFunc(double u);    //Функция активации
         bool onlineLearning(std::vector<Point> points);
+        double check(double x, double y);
         double dE(double u);                //дельта e
 };
 
